@@ -41,8 +41,6 @@ def analyze_pdf(pdf_file):
 
         # Extract the text from the page
         text = page.extract_text()
-        st.write(language_select)
-        st.write(language_select[0])
         translation = translator.translate(text, dest=language_select[0])
         extracted_text.append(translation.text)
     text_str = ' '.join(extracted_text)
