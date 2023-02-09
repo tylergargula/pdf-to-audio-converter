@@ -60,7 +60,7 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
 def text_to_speech(pdf_text):
     st.write('Converting text to audio . . .')
     voice_obj = gTTS(text=pdf_text, lang=language_select[0], tld='co.uk', slow=False)
-    file_name = f"{pdf_file}_to_audio.mp3"
+    file_name = f"{pdf_file.name}_to_audio.mp3"
     voice_obj.save(file_name)
     st.audio(file_name, format='audio/ogg')
     st.markdown(get_binary_file_downloader_html(file_name, 'Audiobook'), unsafe_allow_html=True)
